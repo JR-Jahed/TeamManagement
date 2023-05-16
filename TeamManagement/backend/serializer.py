@@ -33,10 +33,14 @@ class UserSerializer(ModelSerializer):
 class UserTeamSerializer(ModelSerializer):
     class Meta:
         model = UserTeam
-        fields = '__all__'
+        # fields = '__all__'
+        fields = [
+            'user',
+            'team',
+        ]
 
-        user = serializers.PrimaryKeyRelatedField(read_only=True)
-        team = serializers.PrimaryKeyRelatedField(read_only=True)
+        # user = serializers.PrimaryKeyRelatedField(read_only=True)
+        # team = serializers.PrimaryKeyRelatedField(read_only=True)
 
 
 class UserTeamRequestSerializer(ModelSerializer):
